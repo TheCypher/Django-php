@@ -1,0 +1,21 @@
+{
+	"require": {
+		"php": ">=5.3.0",
+	},
+
+	"license": "MIT",
+
+	"author": [
+		{
+			"name": "Nickson Ariemba",
+			"email": "nicksonthecypher@gmail.com"
+		}
+	],
+
+	"autoload": {
+        "psr-4": {
+            "Ngin\\Handlers\\": "ngin/handlers/",
+            "Ngin\\Database\\": "ngin/database/"
+        }
+	}
+}
