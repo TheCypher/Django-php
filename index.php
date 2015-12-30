@@ -5,5 +5,5 @@
 	use Ngin\Handlers\Start;
 
 	$start = new Start();
-	$start->getPage("http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");
+	$start->load("http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");
 ?>
