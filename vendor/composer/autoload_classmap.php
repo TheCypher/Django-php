@@ -6,12 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Ngin\\Database\\Database' => $baseDir . '/ngin/database/database.class.php',
-    'Ngin\\Database\\DatabaseConnect' => $baseDir . '/ngin/database/database.connect.php',
-    'Ngin\\Database\\DatabaseEngine' => $baseDir . '/ngin/database/database.engine.php',
-    'Ngin\\Database\\Log' => $baseDir . '/ngin/database/database.log.php',
-    'Ngin\\Handlers\\Router' => $baseDir . '/ngin/handlers/router.class.php',
-    'Ngin\\Handlers\\Start' => $baseDir . '/ngin/handlers/start.class.php',
-    'Ngin\\Handlers\\Url' => $baseDir . '/ngin/handlers/urls.class.php',
-    'Ngin\\Handlers\\View' => $baseDir . '/ngin/handlers/view.class.php',
+    'Django\\Start\\Start' => $baseDir . '/django/start/start.class.php',
 );

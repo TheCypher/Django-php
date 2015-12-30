@@ -14,8 +14,9 @@
 
 	"autoload": {
         "psr-4": {
-            "Ngin\\Handlers\\": "ngin/handlers/",
-            "Ngin\\Database\\": "ngin/database/"
+        	"Django\\Start\\": "django/start/",
+            "Django\\Handlers\\": "django/handlers/",
+            "Django\\Database\\": "django/database/"
         }
 	}
 }

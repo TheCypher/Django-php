@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Ngin\\Handlers\\' => array($baseDir . '/ngin/handlers'),
-    'Ngin\\Database\\' => array($baseDir . '/ngin/database'),
+    'Django\\Start\\' => array($baseDir . '/django/start'),
+    'Django\\Handlers\\' => array($baseDir . '/django/handlers'),
+    'Django\\Database\\' => array($baseDir . '/django/database'),
 );
