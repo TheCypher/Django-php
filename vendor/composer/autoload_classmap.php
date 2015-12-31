@@ -6,5 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Django\\Handlers\\Settings' => $baseDir . '/django/handlers/settings.class.php',
     'Django\\Start\\Start' => $baseDir . '/django/start/start.class.php',
+    'Project\\Settings' => $baseDir . '/site/mysite/settings.php',
 );
