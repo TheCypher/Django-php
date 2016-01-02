@@ -2,9 +2,9 @@
 namespace Project;
 
 $site_path = realpath(dirname(__FILE__));
-
 include($site_path.'/../../vendor/autoload.php');
-use Django\Handlers\Settings as DjangoSettings;
+
+use Django\Abstracts\Settings as DjangoSettings;
 /**
 * Project settings
 */

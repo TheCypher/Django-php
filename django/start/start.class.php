@@ -9,25 +9,43 @@ namespace Django\Start;
 */
 
 include('vendor/autoload.php');
-use Project\Settings as ProjectSettings;
+use Project\Settings as ProjectSettingsClass;
+use Project\Urls as ProjectUrlsClass;
 
 /**
 * Start
 */
 class Start
 {
+	private $projectSettings;
+	private $projectUrls;
+
+	function __construct()
+	{
+		$this->projectSettings = new ProjectSettingsClass;
+		$this->projectUrls = new ProjectUrlsClass;
+	}
+
+
 	/**
 	* Does URL exist 
 	* True or False
 	*/
-	private $urlExist = [];
+	private $urlExist = [
+		'url'=>False, 
+		'app'=>"appName", 
+		'view'=>"/url"
+	];
 
 
 	/**
 	* Does App exist 
 	* True or False
 	*/
-	private $appExist = ['app'=>False, 'installed'=>False];
+	private $appExist = [
+		'app'=>False, 
+		'installed'=>False
+	];
 
 
 	/**
@@ -49,19 +67,13 @@ class Start
 		else
 		{
 			# If not return and print this
-			return print_r('This URL does not exist');
+			return print_r('This URL "/'.$pages['2'].'" is not defined');
 		}
 
 
 		# Check if app is installed
-		if ($this->appExist['installed']) {
-			# Then get app views
-			/* This method is not yet created */
-			//$this->getAppView($this->appExist['app']);
-		}
-		else
-		{
-			# If app is nor installed return and print this
+		if (!$this->appExist['installed']) {
+			# If app is not installed return and print this
 			return print_r('This app "'.$this->urlExist['app'].'" is not installed');
 		}
 
@@ -70,6 +82,7 @@ class Start
 		if ($this->appExist['app']) {
 			# Then check if it is installed in the "mysite->settings page"
 			$this->appExist['installed'];
+			print_r($this->urlExist['view']);
 		}
 		else
 		{
@@ -87,8 +100,11 @@ class Start
 	*/
 	private function checkUrl($url)
 	{
-		// $this->urlExist = new Urls($url);
-		$this->urlExist = ['url'=>True, 'app'=>"home"];
+		$urlPLusView = $this->projectUrls->urlPatterns($url);
+
+		$this->urlExist['url'] =  $urlPLusView['url'];
+		$this->urlExist['app'] = $urlPLusView['app'];
+		$this->urlExist['view'] = $urlPLusView['view'];
 	}
 
 
@@ -100,10 +116,9 @@ class Start
 	private function checkApp($app)
 	{
 		$site_path = realpath(dirname(__FILE__));
-		$ProjectSettings = new ProjectSettings();
 		
 		# Check if app is installed
-		if (in_array($app, $ProjectSettings->INSTALLED_APPS())) {
+		if (in_array($app, $this->projectSettings->INSTALLED_APPS())) {
 			$this->appExist['installed'] = True;
 		}
 		
@@ -112,7 +127,8 @@ class Start
 			$this->appExist['app'] = True;
 		}
 
-		print_r($this->appExist);
+		// echo "<br>";
+		// print_r($this->urlExist);
 	}
 }
 ?>

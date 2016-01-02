@@ -6,7 +6,10 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Django\\Handlers\\Settings' => $baseDir . '/django/handlers/settings.class.php',
+    'Django\\Abstracts\\Settings' => $baseDir . '/django/abstracts/settings.class.php',
+    'Django\\Abstracts\\Urls' => $baseDir . '/django/abstracts/urls.class.php',
     'Django\\Start\\Start' => $baseDir . '/django/start/start.class.php',
+    'Project\\Home\\Views\\Home' => $baseDir . '/site/home/views.php',
     'Project\\Settings' => $baseDir . '/site/mysite/settings.php',
+    'Project\\Urls' => $baseDir . '/site/mysite/urls.php',
 );

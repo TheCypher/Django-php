@@ -1,5 +1,5 @@
 <?php
-namespace Django\Handlers;
+namespace Django\Abstracts;
 /**
 *
 * @package	phpNgin
@@ -11,11 +11,11 @@ namespace Django\Handlers;
 /**
 * Abstract settings
 */
-Abstract class Settings
+Abstract class Urls
 {
 	/**
 	* Application definition
 	*/	
-	abstract function INSTALLED_APPS();
+	abstract function urlPatterns($url);
 }
 ?>

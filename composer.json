@@ -14,10 +14,12 @@
 
 	"autoload": {
         "psr-4": {
-        	"Project\\": "site/mysite/",
         	"Django\\Start\\": "django/start/",
             "Django\\Handlers\\": "django/handlers/",
-            "Django\\Database\\": "django/database/"
+            "Django\\Abstracts\\": "django/abstracts/",
+            "Django\\Database\\": "django/database/",
+            "Project\\": "site/mysite/",
+            "Project\\Home\\": "site/home/"
         }
 	}
 }
