@@ -24,35 +24,16 @@ class Urls extends DjangoUrls
 	/**
 	* 
 	* @param String
+	* @return array or bool
 	*/
 	public function urlPatterns($url)
 	{
 		$urlpatterns = [
 			#'page'=>['app', $this->appViewsClass->view()],
-			'index'=>['home', $this->homeViews->index()]
+			'index'=>['home', $this->homeViews->index()],
+			'about'=>['home', $this->homeViews->about()]
 		];
 		return self::checkUrl($url, $urlpatterns);
-	}
-
-
-	/**
-	* check if requested url is defined
-	* @param string, array
-	* @return array or bool
-	*/
-	protected function checkUrl($url, $urlpatterns)
-	{
-		if (array_key_exists($url, $urlpatterns)) {
-			return [
-				'url'=>True,
-				'app'=>$urlpatterns[$url][0],
-				'view'=>$urlpatterns[$url][1]
-			];
-		}
-		else
-		{
-			return False;
-		}
 	}
 }
 ?>

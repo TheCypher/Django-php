@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'Django\\Abstracts\\Settings' => $baseDir . '/django/abstracts/settings.class.php',
     'Django\\Abstracts\\Urls' => $baseDir . '/django/abstracts/urls.class.php',
+    'Django\\Start\\Render' => $baseDir . '/django/start/render.class.php',
     'Django\\Start\\Start' => $baseDir . '/django/start/start.class.php',
     'Project\\Home\\Views\\Home' => $baseDir . '/site/home/views.php',
     'Project\\Settings' => $baseDir . '/site/mysite/settings.php',
